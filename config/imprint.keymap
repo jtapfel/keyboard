@@ -108,8 +108,10 @@
 //right hand trackball configuration
 
 &trackball_peripheral_listener {
-     input-processors =
-        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_XY_INVERT)>;
+    input-processors =
+        <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
+        <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
+        <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>.
     // activate layer 3 within 500ms of the trackball moving
     // <&zip_temp_layer 3 500>;
 };
