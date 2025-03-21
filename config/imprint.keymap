@@ -14,14 +14,14 @@
 
         default_layer {
             bindings = <
-&kp ESC    &kp F1  &kp F2            &kp F3    &kp F4         &kp F5                       &kp F6           &kp F7                &kp F8     &kp F9    &kp F10   &kp F11
-&kp EQUAL  &kp N1  &kp N2            &kp N3    &kp N4         &kp N5                       &kp N6           &kp N7                &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q   &kp W             &kp E     &kp R          &kp T                        &kp Y            &kp U                 &kp I      &kp O     &kp P     &kp BSLH
-&kp LCTRL  &kp A   &kp S             &kp D     &kp F          &kp G                        &kp H            &kp J                 &kp K      &kp L     &kp SEMI  &kp SQT
-&tog 2     &kp Z   &kp X             &kp C     &kp V          &kp B                        &kp N            &kp M                 &kp COMMA  &kp DOT   &kp FSLH  &tog 4
-&trans     &trans  &kp LEFT_CONTROL  &kp LALT  &trans                                                       &trans                &kp LBKT   &kp RBKT  &trans    &trans
-                                               &mo 3          &mo 1             &kp ESC    &kp LEFT_ALT     &kp LS(LEFT_CONTROL)  &mo 5
-                                               &kp BACKSPACE  &kp LEFT_COMMAND  &kp TAB    &kp RIGHT_SHIFT  &kp ENTER             &kp SPACE
+&kp ESC       &kp F1  &kp F2          &kp F3     &kp F4         &kp F5                              &kp F6        &kp F7     &kp F8     &kp F9    &kp F10   &kp F11
+&kp EQUAL     &kp N1  &kp N2          &kp N3     &kp N4         &kp N5                              &kp N6        &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB       &kp Q   &kp W           &kp E      &kp R          &kp T                               &kp Y         &kp U      &kp I      &kp O     &kp P     &kp BSLH
+&kp UP_ARROW  &kp A   &kp S           &kp D      &kp F          &kp G                               &kp H         &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
+&kp DOWN      &kp Z   &kp X           &kp C      &kp V          &kp B                               &kp N         &kp M      &kp COMMA  &kp DOT   &kp FSLH  &tog 2
+&trans        &trans  &kp LEFT_ARROW  &kp RIGHT  &trans                                                           &trans     &kp LBKT   &kp RBKT  &trans    &trans
+                                                 &mo 1          &mo 3             &kp ESC           &kp LEFT_ALT  &kp RCTRL  &kp TAB
+                                                 &kp BACKSPACE  &kp LEFT_COMMAND  &kp LEFT_SHIFT    &mo 5         &kp ENTER  &kp SPACE
             >;
         };
 
@@ -112,13 +112,12 @@
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-    // activate layer 3 within 500ms of the trackball moving
-    // <&zip_temp_layer 3 500>;
-};
-
-//left hand trackball configuration
-
-&trackball_central_listener {
+        // activate layer 3 within 500ms of the trackball moving,
+        // <&zip_temp_layer 3 500>;,
+        };,
+        //left hand trackball configuration,
+        &trackball_central_listener,
+        {
    input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
         <&zip_xy_scaler 1 3>,
